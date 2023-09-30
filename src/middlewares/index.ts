@@ -1,0 +1,2 @@
+export { validateBodyDTOMiddleware } from './validationBodyDTOMiddleware';
+
