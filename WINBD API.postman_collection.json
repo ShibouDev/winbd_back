@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "2af8dc2f-0e03-4e0a-8a78-f5ed0c821e07",
+		"name": "WINBD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22433557"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"email\": \"test@mail.ru\",\r\n    \"password\": \"test123\",\r\n    \"passwordConfirm\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@mail.ru\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5ODkxODczM30.dWZf9t7LZZLmcfEL0zfXaVJvbTSPxg6BWRqezw5dn2Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/auth/refresh",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5NjMyNzYzM30.WBo4lTYQdEXQzNxsFZmjs3_f7UoOJNRGE-Yqy8PYkno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTE2ZWMwNWRkN2MzNjZiYjk0NzFlZDUiLCJpYXQiOjE2OTYyNTc1MDcsImV4cCI6MTY5NjI1ODQwN30.Sha5dE0EC3f03y7EIde39gTUy4f-HlH4nWCXXBQit-w",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"651be437881e7230994f9375\",\r\n    \"rawText\": \"<p>123<p>\",\r\n    \"publicTime\": \"2023-10-04T09:54:00.000Z\",\r\n    \"publish\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/news/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5NjMyNzYzM30.WBo4lTYQdEXQzNxsFZmjs3_f7UoOJNRGE-Yqy8PYkno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"651be437881e7230994f9375\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/news/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"news",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5NjMyNzYzM30.WBo4lTYQdEXQzNxsFZmjs3_f7UoOJNRGE-Yqy8PYkno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"651be437881e7230994f9375\",\r\n    \"rawText\": \"<h1>123</h1>\",\r\n    \"_id\": \"651be5a9881e7230994f93bf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5555/api/news/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"news",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5NjMyNzYzM30.WBo4lTYQdEXQzNxsFZmjs3_f7UoOJNRGE-Yqy8PYkno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5555/api/news/651be5a9881e7230994f93bf",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"news",
+								"651be5a9881e7230994f93bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFiZTQzNzg4MWU3MjMwOTk0ZjkzNzUiLCJpYXQiOjE2OTYzMjY3MzMsImV4cCI6MTY5NjMyNzYzM30.WBo4lTYQdEXQzNxsFZmjs3_f7UoOJNRGE-Yqy8PYkno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5555/api/news/651be5a9881e7230994f93bf",
+							"host": [
+								"localhost"
+							],
+							"port": "5555",
+							"path": [
+								"api",
+								"news",
+								"651be5a9881e7230994f93bf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
