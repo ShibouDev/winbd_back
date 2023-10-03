@@ -1,11 +1,11 @@
 //controllers
-import { AuthController } from './controllers';
+import { AuthController, NewsController } from './controllers';
 
 //services
-import { AuthService } from './services';
+import { AuthService, NewsService } from './services';
 
 //routes
-import { UserRoutes } from './routes/user';
+import { NewsRoutes, UserRoutes } from './routes';
 
 //utils
 import { connectDB } from './utils/connectDB';
@@ -25,8 +25,13 @@ export const di = () => {
     logger.info('init');
     await connectDB();
     inst['userService'] = new AuthService();
+    inst['newsService'] = new NewsService();
     inst['userController'] = new AuthController(inst['userService']);
-    inst['routes'] = [new UserRoutes(inst['userController'])];
+    inst['newsController'] = new NewsController(inst['newsService']);
+    inst['routes'] = [
+      new UserRoutes(inst['userController']),
+      new NewsRoutes(inst['newsController']),
+    ];
     logger.info('init finish');
   }
   return {

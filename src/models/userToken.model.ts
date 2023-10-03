@@ -1,5 +1,5 @@
 import { Model, Schema, model } from 'mongoose';
-import { IUserTokenDocument } from '../interfaces/IUserTokenDocument';
+import { IUserTokenDocument } from '../interfaces';
 
 interface IUserTokenModel extends Model<IUserTokenDocument> {}
 

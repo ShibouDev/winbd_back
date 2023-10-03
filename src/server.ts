@@ -14,7 +14,8 @@ async function server() {
   const port = serverConfig.PORT;
 
   app.use(cors({ credentials: true, origin: '*' }));
-  app.use(express.json({ limit: '10kb' }));
+  app.use('/images', express.static('static/images'))
+  app.use(express.json());
   dependencyInjection.get('routes').forEach((route: any) => {
     app.use(route.path, route.router);
   });

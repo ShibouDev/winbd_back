@@ -51,6 +51,7 @@ export const verifyAccessToken = async (accessToken: string) => {
       message: 'Valid access token',
     };
   } catch (error) {
+    console.log("🚀 ~ file: verifyTokens.ts:54 ~ verifyAccessToken ~ error:", error)
     return {
       error: true,
       message: 'Invalid access token',

@@ -1,7 +1,7 @@
 import * as bcrypt from 'bcryptjs';
 import { Model, Schema, model } from 'mongoose';
 
-import { IUserDocument } from '../interfaces/IUserDocument';
+import { IUserDocument } from '../interfaces';
 
 export interface IUser extends IUserDocument {
   comparePassword(password: string): boolean;

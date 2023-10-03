@@ -1,6 +1,6 @@
 //types
 
-import { IUserDocument } from '../interfaces/IUserDocument';
+import { IUserDocument } from '../interfaces';
 
 //lib
 import jwt from 'jsonwebtoken';
